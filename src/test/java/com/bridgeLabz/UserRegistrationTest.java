@@ -89,4 +89,16 @@ public class UserRegistrationTest {
         boolean valid = userRegistration.passwordRule3("abcAFG$%");
         Assert.assertEquals(false,valid);
     }
+
+    @Test
+    public void  givenPasswordAsPerRule4_ShouldHaveExactlyOneSpecialCharacter_WhenValid_ShouldReturnTrue(){
+        boolean valid = userRegistration.passwordRule4("ABCabcB123$");
+        Assert.assertEquals(true,valid);
+    }
+
+    @Test
+    public void  givenPasswordAsPerRule4_ShouldHaveExactlyOneSpecialCharacter_WhenInvalid_ShouldReturnTrue(){
+        boolean valid = userRegistration.passwordRule4("abcAOP123");
+        Assert.assertEquals(false,valid);
+    }
 }
