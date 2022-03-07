@@ -17,4 +17,16 @@ public class UserRegistrationTest {
         boolean valid = userRegistration.firstName("loki");
         Assert.assertEquals(false,valid);
     }
+
+    @Test
+    public void  givenLastName_WhenValid_ShouldReturnTrue(){
+        boolean valid = userRegistration.lastName("Hassan");
+        Assert.assertEquals(true,valid);
+    }
+
+    @Test
+    public void  givenLastName_WhenInvalid_ShouldReturnTrue(){
+        boolean valid = userRegistration.lastName("hassan");
+        Assert.assertEquals(false,valid);
+    }
 }
