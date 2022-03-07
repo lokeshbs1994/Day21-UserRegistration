@@ -77,4 +77,16 @@ public class UserRegistrationTest {
         boolean valid = userRegistration.passwordRule2("abc1234@df1");
         Assert.assertEquals(false,valid);
     }
+
+    @Test
+    public void  givenPasswordAsPerRule3_ShouldHaveAtleast1NumericNumber_WhenValid_ShouldReturnTrue(){
+        boolean valid = userRegistration.passwordRule3("ABCabc123@");
+        Assert.assertEquals(true,valid);
+    }
+
+    @Test
+    public void  givenPasswordAsPerRule3_ShouldHaveAtleast1NumericNumber_WhenInvalid_ShouldReturnTrue(){
+        boolean valid = userRegistration.passwordRule3("abcAFG$%");
+        Assert.assertEquals(false,valid);
+    }
 }
