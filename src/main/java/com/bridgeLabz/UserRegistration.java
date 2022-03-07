@@ -22,4 +22,10 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(emailId);
         return matcher.matches();
     }
+
+    public boolean mobileNumber(String mobileNumber){
+        Pattern pattern = Pattern.compile("^[0-9]{2}\\s{1}[0-9]{10}$");
+        Matcher matcher = pattern.matcher(mobileNumber);
+        return matcher.matches();
+    }
 }
