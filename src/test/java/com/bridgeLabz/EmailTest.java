@@ -20,7 +20,7 @@ public class EmailTest {
     }
 
     @Parameterized.Parameters
-    public static Collection emailIdsExpectedResult() {
+    public static Collection emailIdsExpectedResult() throws UserRegistrationException {
         return Arrays.asList(new Object[][]{
                 {"abc@yahoo.com", true},
                 {"abc-100@yahoo.com", true},
@@ -50,8 +50,12 @@ public class EmailTest {
 
     @Test
     public void givenEmailIds_withExpectedResult_shouldPassAllTheTestCases() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.emailAddress(this.email);
-        Assert.assertEquals(this.expectedResult, result);
+        try {
+            UserRegistration userRegistration = new UserRegistration();
+            boolean result = userRegistration.emailAddress(this.email);
+            Assert.assertEquals(this.expectedResult, result);
+        } catch (UserRegistrationException e) {
+            e.printStackTrace();
+        }
     }
 }
