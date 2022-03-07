@@ -34,4 +34,10 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+
+    public boolean passwordRule2(String password) {
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]).{8,}$");
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }
