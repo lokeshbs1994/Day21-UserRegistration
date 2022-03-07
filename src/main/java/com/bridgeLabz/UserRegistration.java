@@ -28,4 +28,10 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(mobileNumber);
         return matcher.matches();
     }
+
+    public boolean passwordRule1(String password) {
+        Pattern pattern = Pattern.compile("^[0-9a-zA-Z!,@#$&*().]{8,}$");
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }

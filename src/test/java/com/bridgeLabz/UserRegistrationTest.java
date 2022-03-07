@@ -53,4 +53,16 @@ public class UserRegistrationTest {
         boolean valid = userRegistration.mobileNumber("919898989898");
         Assert.assertEquals(false,valid);
     }
+    //password
+    @Test
+    public void  givenPasswordAsPerRule1_WhenValid_ShouldReturnTrue(){
+        boolean valid = userRegistration.passwordRule1("abcAGH123@#");
+        Assert.assertEquals(true,valid);
+    }
+
+    @Test
+    public void  givenPasswordAsPerRule1_WhenInvalid_ShouldReturnTrue(){
+        boolean valid = userRegistration.passwordRule1("AG67@");
+        Assert.assertEquals(false,valid);
+    }
 }
